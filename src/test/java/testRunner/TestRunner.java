@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "D:\\git\\waltz-testscripts\\src\\test\\java\\resources\\features",
+        features = {"src/test/java/resources/features"},
         glue={"stepDefinition"},
         plugin = {"pretty","html:target/cucumber"},
         tags = "@sanity"
