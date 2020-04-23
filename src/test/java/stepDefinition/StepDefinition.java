@@ -75,6 +75,7 @@ public class StepDefinition {
     public void createATag(String strTag) {
         driver.findElement(By.xpath("//i[contains(text(),'tags')]/a[contains(text(),'add one')]")).click();
         driver.findElement(By.xpath("//input[@class='input ng-pristine ng-untouched ng-valid ng-empty']")).sendKeys(strTag);
+        driver.findElement(By.xpath("//div[contains(text(),'Tags')]")).click();
         driver.findElement(By.xpath("//button[@class='btn btn-xs']")).click();
 
     }
@@ -130,5 +131,89 @@ public class StepDefinition {
             e.printStackTrace();
         }
     }
+
+    @Then("view the Physical Flow Details")
+    public void view_the_Physical_Flow_Details() {
+       driver.findElement(By.xpath("//a[contains(text(),'Physical Flow Detail')]")).click();
+    }
+
+    @Then("view the flows by  it {string}")
+    public void view_the_flows_by_it(String strVar) {
+        driver.findElement(By.xpath("//button[contains(text(),'"+strVar+"')]")).click();
+    }
+
+    @When("i want to  view details  for {string}")
+    public void i_want_to_view_details_for(String string) {
+        driver.findElement(By.xpath("//span[text()='Other Viewpoints']")).click();
+        driver.findElement(By.xpath("//span[text()='Equities']")).click();
+    }
+
+    @When("view the {string} of applications under it")
+    public void view_the_of_applications_under_it(String string) {
+        driver.findElement(By.xpath("//span[text()='" + string + "']")).click();
+    }
+
+    @Given("i want to login in waltz application")
+    public void i_want_to_login_in_waltz_application() {
+        i_am_on_waltz_home_page();
+        driver.findElement(By.xpath("//waltz-icon[@name='user']")).click();
+        driver.findElement(By.xpath("//span[text()='Login']")).click();
+    }
+
+    @When("i enter credentials as {string}")
+    public void i_enter_credentials_as(String strUser) {
+        driver.findElement(By.xpath("//input[@ng-model='username']")).sendKeys(strUser);
+    }
+
+    @When("i enter password as {string}")
+    public void i_enter_password_as(String strPass) {
+        driver.findElement(By.xpath("//input[@ng-model='password']")).sendKeys(strPass);
+    }
+
+    @When("click on {string}")
+    public void click_on(String strButton) {
+        driver.findElement(By.xpath("//button[contains(text(),'"+strButton+"')]")).click();
+    }
+
+    @Then("invalid credentials message is displayed")
+    public void invalid_credentials_message_is_displayed() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        driver.switchTo().alert().accept();
+
+    }
+
+    @When("view the {string} for it")
+    public void view_the_for_it(String string) {
+        driver.findElement(By.xpath("//span[text()='" + string + "']")).click();
+    }
+
+    @Then("its relations details should be displayed")
+    public void its_relations_details_should_be_displayed() {
+
+    }
+
+
+    @Then("view {string} under it")
+    public void view_under_it(String string) {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        driver.findElement(By.xpath("//div[text()='"+string+"']")).click();
+    }
+
+    @Then("view servers detail")
+    public void view_servers_detail() {
+
+        driver.findElement(By.xpath("//a[text()='Servers']")).click();
+    }
+
+
+
 }
 
