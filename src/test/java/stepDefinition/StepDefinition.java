@@ -2,12 +2,13 @@ package stepDefinition;
 
 import static org.junit.Assert.assertTrue;
 
-import io.cucumber.core.internal.gherkin.SymbolCounter;
+//import io.cucumber.core.internal.gherkin.SymbolCounter;
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 public class StepDefinition {
     @After
     public void closeBrowser() {
-          driver.quit();
+         driver.quit();
     }
 
     WebDriver driver;
@@ -29,9 +30,10 @@ public class StepDefinition {
     @Given("i am on waltz home page")
     public void i_am_on_waltz_home_page() {
         System.out.println("launch waltz");
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "driver/chromedriver_old.exe");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("http://ec2-34-208-125-3.us-west-2.compute.amazonaws.com:8081/waltz-web/home");
+        driver.get("http://db.lab.sealights.co:8081/waltz-web/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
@@ -77,6 +79,7 @@ public class StepDefinition {
         driver.findElement(By.xpath("//input[@class='input ng-pristine ng-untouched ng-valid ng-empty']")).sendKeys(strTag);
         driver.findElement(By.xpath("//div[contains(text(),'Tags')]")).click();
         driver.findElement(By.xpath("//button[@class='btn btn-xs']")).click();
+        driver.findElement(By.xpath("//span[text()='People']")).click();
 
     }
 
@@ -86,6 +89,8 @@ public class StepDefinition {
         driver.findElement(By.xpath("//a[contains(text(),'update')]")).click();
         driver.findElement(By.xpath("//a[@class='remove-button']")).click();
         driver.findElement(By.xpath("//div[contains(text(),'Tags')]")).click();
+        driver.findElement(By.xpath("//div[contains(text(),'Aliases')]")).click();
+        driver.findElement(By.xpath("//div[contains(text(),'Name')]")).click();
         driver.findElement(By.xpath("//button[@class='btn btn-xs']")).click();
     }
 

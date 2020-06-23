@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
@@ -33,20 +31,28 @@
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
-      <version>5.5.0</version>
+      <version>4.8.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit</artifactId>
-      <version>5.5.0</version>
+      <version>4.8.1</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>4.0.0</version>
+    </dependency>
+
 
   </dependencies>
 
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement>
+<!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
@@ -87,7 +93,63 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
-      </plugins>
+      <plugin>
+<groupId>io.sealights.on-premise.agents.plugin</groupId>
+<artifactId>sealights-maven-plugin</artifactId>
+<version>2.1.687</version>
+<configuration>
+<tokenFile>sltoken.txt</tokenFile>
+<createBuildSessionId>false</createBuildSessionId>
+<testStage>Automation Tests</testStage>
+<labId>integ_cc7487fe-aa14-4acb-b249-1ca09c33303d</labId>
+<logLevel>OFF</logLevel>
+<includeResources>true</includeResources>
+</configuration>
+<executions>
+<execution>
+<id>a2</id>
+<goals>
+<goal>test-listener</goal>
+</goals>
+</execution>
+<execution>
+<id>a3</id>
+<goals>
+<goal>prepare-test-listener</goal>
+</goals>
+</execution>
+</executions>
+</plugin>
+</plugins>
     </pluginManagement>
-  </build>
+  <plugins>
+<plugin>
+<groupId>io.sealights.on-premise.agents.plugin</groupId>
+<artifactId>sealights-maven-plugin</artifactId>
+<version>2.1.687</version>
+<configuration>
+<tokenFile>sltoken.txt</tokenFile>
+<createBuildSessionId>false</createBuildSessionId>
+<testStage>Automation Tests</testStage>
+<labId>integ_cc7487fe-aa14-4acb-b249-1ca09c33303d</labId>
+<logLevel>OFF</logLevel>
+<includeResources>true</includeResources>
+</configuration>
+<executions>
+<execution>
+<id>a2</id>
+<goals>
+<goal>test-listener</goal>
+</goals>
+</execution>
+<execution>
+<id>a3</id>
+<goals>
+<goal>prepare-test-listener</goal>
+</goals>
+</execution>
+</executions>
+</plugin>
+</plugins>
+</build>
 </project>
