@@ -4,7 +4,7 @@ agent any
         stage('Test Stage'){
             steps{
                 withMaven(maven:'maven'){
-                    sh 'mvn clean test'
+                    bat 'mvn clean test'
                 }
             }
 
