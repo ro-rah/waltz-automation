@@ -1,0 +1,11 @@
+{
+  "tokenFile": "sltoken.txt",
+  "createBuildSessionId": false,
+  "executionType": "testsonly",
+  "testStage": "Automation Tests",
+  "labId": "integ_c27bbc55-898f-4f1d-b705-92c490563031",
+  "logEnabled": false,
+  "logDestination": "console",
+  "logLevel": "off",
+  "proxy": "http://127.0.0.1:8081"
+} 
