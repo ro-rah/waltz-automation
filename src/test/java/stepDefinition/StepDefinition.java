@@ -33,7 +33,8 @@ public class StepDefinition {
         //System.setProperty("webdriver.chrome.driver", "driver/chromedriver_old.exe");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("http://db.lab.sealights.co:8081/waltz-web/");
+        //driver.get("http://db.lab.sealights.co:8081/waltz-web/");
+        driver.get(" http://localhost:8088/waltz-web/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
