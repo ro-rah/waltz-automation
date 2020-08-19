@@ -60,7 +60,7 @@ Feature: Waltz automation
     Then application details should be displayed
     And view the "Technology" associated wth it
     And view servers detail
-
+  @sanity
   Scenario: Search an Application
     Given i am on waltz home page
     When i search application "Bombay"
