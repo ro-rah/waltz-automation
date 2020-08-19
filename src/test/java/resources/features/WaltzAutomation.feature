@@ -1,4 +1,4 @@
-@sanity
+
 
 Feature: Waltz automation
 
@@ -39,7 +39,7 @@ Feature: Waltz automation
     Given i am on waltz home page
     When i want to  view details  for "Equities"
 
-
+  @sanity
   Scenario:Login to waltz with invalid credentials
     Given i want to login in waltz application
     When i enter credentials as "admin"
