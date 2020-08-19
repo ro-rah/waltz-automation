@@ -4,19 +4,19 @@ Feature: Waltz automation
 
   Scenario: create a tag
     Given i am on waltz home page
-    When i search application "Bombay"
+    When i search application "Camel - 250"
     Then application details should be displayed
     And create a tag "Sealights"
 
   Scenario: remove a tag
     Given i am on waltz home page
-    When i search application "Bombay"
+    When i search application "Camel - 250"
     Then application details should be displayed
     And remove tag "Sealights"
 
   Scenario: create an attestation
     Given i am on waltz home page
-    When i search application "Bombay"
+    When i search application "Camel - 250"
     Then application details should be displayed
     And  attest the physical flow data
 
@@ -28,7 +28,7 @@ Feature: Waltz automation
 
   Scenario: view physical flows of an application
     Given i am on waltz home page
-    When i search application "Bombay"
+    When i search application "Camel - 250"
     Then application details should be displayed
     And view the "Data Flows" associated wth it
     And view the Physical Flow Details
@@ -56,14 +56,14 @@ Feature: Waltz automation
 
   Scenario: view technology for an application
     Given i am on waltz home page
-    When i search application "Bombay"
+    When i search application "Camel - 250"
     Then application details should be displayed
     And view the "Technology" associated wth it
     And view servers detail
   @sanity
   Scenario: Search an Application
     Given i am on waltz home page
-    When i search application "Bombay"
+    When i search application "Camel - 250"
     Then application details should be displayed
     And view the "Attestations" associated wth it
     And view the "Bookmarks" associated wth it
