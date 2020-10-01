@@ -93,63 +93,7 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
-      <plugin>
-<groupId>io.sealights.on-premise.agents.plugin</groupId>
-<artifactId>sealights-maven-plugin</artifactId>
-<version>2.1.687</version>
-<configuration>
-<tokenFile>sltoken.txt</tokenFile>
-<createBuildSessionId>false</createBuildSessionId>
-<testStage>Automation Tests</testStage>
-<labId>integ_cc7487fe-aa14-4acb-b249-1ca09c33303d</labId>
-<logLevel>OFF</logLevel>
-<includeResources>true</includeResources>
-</configuration>
-<executions>
-<execution>
-<id>a2</id>
-<goals>
-<goal>test-listener</goal>
-</goals>
-</execution>
-<execution>
-<id>a3</id>
-<goals>
-<goal>prepare-test-listener</goal>
-</goals>
-</execution>
-</executions>
-</plugin>
-</plugins>
+      </plugins>
     </pluginManagement>
-  <plugins>
-<plugin>
-<groupId>io.sealights.on-premise.agents.plugin</groupId>
-<artifactId>sealights-maven-plugin</artifactId>
-<version>2.1.687</version>
-<configuration>
-<tokenFile>sltoken.txt</tokenFile>
-<createBuildSessionId>false</createBuildSessionId>
-<testStage>Automation Tests</testStage>
-<labId>integ_cc7487fe-aa14-4acb-b249-1ca09c33303d</labId>
-<logLevel>OFF</logLevel>
-<includeResources>true</includeResources>
-</configuration>
-<executions>
-<execution>
-<id>a2</id>
-<goals>
-<goal>test-listener</goal>
-</goals>
-</execution>
-<execution>
-<id>a3</id>
-<goals>
-<goal>prepare-test-listener</goal>
-</goals>
-</execution>
-</executions>
-</plugin>
-</plugins>
-</build>
+  </build>
 </project>
