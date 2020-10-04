@@ -24,7 +24,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class StepDefinition {
     @After
     public void closeBrowser() {
-         driver.quit();
+         driver.close();
     }
 
     WebDriver driver;
