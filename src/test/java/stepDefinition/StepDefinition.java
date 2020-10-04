@@ -24,6 +24,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class StepDefinition {
     @After
     public void closeBrowser() {
+        try {
+            Thread.sleep(30000);
+        }
+        catch(InterruptedException ex){
+            Thread.currentThread().interrupt();
+        }
          driver.close();
     }
 
@@ -43,6 +49,12 @@ public class StepDefinition {
         //driver = new HtmlUnitDriver();
         //driver.get("http://db.lab.sealights.co:8081/waltz-web/");
         driver.get(" http://localhost:8081/waltz-web/");
+        try {
+            Thread.sleep(30000);
+        }
+        catch(InterruptedException ex){
+            Thread.currentThread().interrupt();
+        }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
@@ -77,7 +89,7 @@ public class StepDefinition {
     @And("sleep a while")
     public void sleepAWhile() {
         try {
-            Thread.sleep(20000);
+            Thread.sleep(30000);
         }
         catch(InterruptedException ex){
             Thread.currentThread().interrupt();
