@@ -69,6 +69,11 @@ public class StepDefinition {
         System.out.println("tag created");
     }
 
+    @And("sleep a while")
+    public void sleepAWhile() {
+        Thread.sleep(20000);
+    }
+    
     @When("i want to search {string}")
     public void iWantToSearch(String arg0) {
     }
