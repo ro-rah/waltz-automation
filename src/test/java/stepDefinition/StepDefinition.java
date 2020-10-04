@@ -37,6 +37,15 @@ public class StepDefinition {
 
     @Given("i am on waltz home page")
     public void i_am_on_waltz_home_page() {
+                    if(service == null){
+                service = new ChromeDriverService.Builder()
+                        .usingDriverExecutable(new File("chromedriver"))// set the chromedriver path
+                       .usingAnyFreePort()
+                        .withEnvironment(ImmutableMap.of("DISPLAY", ":15"))
+                        .withSilent(true)
+                        .build();
+                service.start();
+            }
         System.out.println("launch waltz");
         System.setProperty("webdriver.chrome.driver", "chromedriver");
         
