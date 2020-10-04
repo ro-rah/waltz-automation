@@ -33,9 +33,14 @@ public class StepDefinition {
     public void i_am_on_waltz_home_page() {
         System.out.println("launch waltz");
         //System.setProperty("webdriver.chrome.driver", "driver/chromedriver_old.exe");
+        
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
+        driver = new ChromeDriver(options);
+        
         WebDriverManager.chromedriver().setup();
-        //driver = new ChromeDriver();
-        driver = new HtmlUnitDriver();
+        driver = new ChromeDriver();
+        //driver = new HtmlUnitDriver();
         //driver.get("http://db.lab.sealights.co:8081/waltz-web/");
         driver.get(" http://localhost:8081/waltz-web/");
         driver.manage().window().maximize();
