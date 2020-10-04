@@ -71,7 +71,12 @@ public class StepDefinition {
 
     @And("sleep a while")
     public void sleepAWhile() {
-        Thread.sleep(20000);
+        try {
+            Thread.sleep(20000);
+        }
+        catch(InterruptedException ex){
+            Thread.currentThread().interrupt();
+        }
     }
     
     @When("i want to search {string}")
