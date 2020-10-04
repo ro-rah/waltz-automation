@@ -30,7 +30,7 @@ public class StepDefinition {
         catch(InterruptedException ex){
             Thread.currentThread().interrupt();
         }
-         driver.close();
+         driver.quit();
     }
 
     WebDriver driver;
@@ -38,23 +38,19 @@ public class StepDefinition {
     @Given("i am on waltz home page")
     public void i_am_on_waltz_home_page() {
         System.out.println("launch waltz");
-        //System.setProperty("webdriver.chrome.driver", "driver/chromedriver_old.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
         
-        //ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
-        //driver = new ChromeDriver(options);
+        WebDriverManager.chromedriver().setup();
         
-        //WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
+        driver = new ChromeDriver(options);
+        
+        
         //driver = new ChromeDriver();
-        driver = new HtmlUnitDriver();
+        //driver = new HtmlUnitDriver();
         //driver.get("http://db.lab.sealights.co:8081/waltz-web/");
         driver.get(" http://localhost:8081/waltz-web/");
-        try {
-            Thread.sleep(30000);
-        }
-        catch(InterruptedException ex){
-            Thread.currentThread().interrupt();
-        }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
