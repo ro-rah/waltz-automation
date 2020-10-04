@@ -17,7 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 /**
  * Unit test for simple App.
  */
