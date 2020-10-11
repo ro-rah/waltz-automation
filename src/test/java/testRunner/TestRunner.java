@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = {"src/test/java/resources/features"},
         glue={"stepDefinition"},
         plugin = {"pretty","html:target/cucumber","rerun:target/rerun.txt"},
-       tags = "@sanity"
+       tags = ""
 
 )
 
