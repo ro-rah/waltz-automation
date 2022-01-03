@@ -3,7 +3,7 @@
   "createBuildSessionId": false,
   "executionType": "testsonly",
   "testStage": "Automation Tests",
-  "labId": "integ_c27bbc55-898f-4f1d-b705-92c490563031",
+  "labId": "integ_qa_b6a1_ronakwaltzver2_integration1",
   "logEnabled": false,
   "logDestination": "console",
   "logLevel": "off",
