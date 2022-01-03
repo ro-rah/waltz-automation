@@ -3,7 +3,7 @@
   "createBuildSessionId": false,
   "executionType": "testsonly",
   "testStage": "Automation Tests",
-  "labId": "integ_qa_b6a1_ronakwaltzver2_integration1",
+  "labId": "integ_qa_ronak_walz_ver2",
   "logEnabled": false,
   "logDestination": "console",
   "logLevel": "off",
